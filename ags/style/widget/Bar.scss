@@ -1,0 +1,70 @@
+@use "sass:color";
+@import "style/theme.scss";
+
+.bar {
+  margin: 0.5rem 1rem;
+  font-size: 1rem;
+
+  .box {
+    min-height: 2rem;
+    padding: 0.5rem 1rem;
+
+    color: $text;
+
+    button {
+      min-width: 0;
+      min-height: 0;
+
+      margin: 0;
+      padding: 0;
+
+      background: none;
+    }
+
+    .launcher {
+      border: none;
+      font-size: 1.5rem;
+
+      &:hover {
+        color: $border;
+        transition: 200ms linear;
+      }
+    }
+
+    .workspaces {
+      .workspace {
+        border: solid 2px $text;
+        min-width: 0.8rem;
+        min-height: 0.8rem;
+        transition: min-width 0.25s ease-out;
+
+        &.active {
+          background-color: $border;
+          min-width: 1.5rem;
+        }
+
+        &:hover {
+          background-color: $border;
+          transition: 100ms linear;
+        }
+      }
+    }
+  }
+
+  .power {
+    border: none;
+
+    font-size: 1.5rem;
+    color: $text;
+
+    &:hover {
+      color: $border;
+      transition: 200ms linear;
+    }
+  }
+
+  .sep {
+    margin: 0.5rem 1rem;
+    background-color: $overlay0;
+  }
+}

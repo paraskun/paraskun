@@ -1,0 +1,29 @@
+@use "style/widget/Menu.scss";
+@use "style/widget/Bar.scss";
+@import "style/theme.scss";
+
+* {
+  font-family: "Montserrat";
+  font-weight: 700;
+}
+
+window {
+  background-color: transparent;
+}
+
+button {
+  background-color: transparent;
+}
+
+.box {
+  margin: 6px;
+
+  box-shadow: 0 0 0 2px $border, 5px 5px 0 0 $border;
+  border-radius: $border-radius;
+  background-color: $surface0;
+}
+
+.secondary {
+  font-weight: 400;
+}
+
