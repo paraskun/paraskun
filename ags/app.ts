@@ -1,5 +1,6 @@
 import { App } from "astal/gtk4"
-import Menu from "./widget/Menu"
+import Launcher from "./widget/Launcher"
+import ControlPanel from "./widget/ControlPanel"
 import Bar from "./widget/Bar"
 import { exec } from "astal/process"
 
@@ -16,6 +17,7 @@ App.start({
     css: "/tmp/frappe.css",
     main() {
       Bar()
-      Menu()
+      Launcher()
+      ControlPanel()
     },
 })

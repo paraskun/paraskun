@@ -2,34 +2,14 @@
 @import "style/theme.scss";
 
 .bar {
-  margin: 0.5rem 1rem;
-  font-size: 1rem;
+  margin: 10px 20px 0px 20px;
+  font-size: 10pt;
 
   .box {
-    min-height: 2rem;
-    padding: 0.5rem 1rem;
+    min-height: 30px;
+    padding: 10px 15px;
 
     color: $text;
-
-    button {
-      min-width: 0;
-      min-height: 0;
-
-      margin: 0;
-      padding: 0;
-
-      background: none;
-    }
-
-    .launcher {
-      border: none;
-      font-size: 1.5rem;
-
-      &:hover {
-        color: $border;
-        transition: 200ms linear;
-      }
-    }
 
     .workspaces {
       .workspace {
@@ -48,18 +28,6 @@
           transition: 100ms linear;
         }
       }
-    }
-  }
-
-  .power {
-    border: none;
-
-    font-size: 1.5rem;
-    color: $text;
-
-    &:hover {
-      color: $border;
-      transition: 200ms linear;
     }
   }
 
