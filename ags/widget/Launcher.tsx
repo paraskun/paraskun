@@ -10,7 +10,7 @@ function AppButton({ app }) {
     <button 
       cssClasses={["btn"]}
       onClicked={() => {
-        App.toggle_window("Menu")
+        App.toggle_window("Launcher")
         app.launch()
       }}
     >

@@ -1,5 +1,7 @@
 @use "style/widget/Launcher.scss";
+@use "style/widget/ControlPanel.scss";
 @use "style/widget/Bar.scss";
+
 @import "style/theme.scss";
 
 * {
@@ -24,8 +26,10 @@ window {
   border-radius: 3px;
   padding: 3px 10px;
   font-size: 14pt;
+  transition: 0.25s;
 
   &:hover {
     box-shadow: 0 0 0 0px $border, 2px 2px 0 0 $border;
+    transform: translateX(-1px) translateY(-1px);
   }
 }
