@@ -1,10 +1,18 @@
 import { App, Astal, Gtk, Gdk, hook } from "astal/gtk4"
 import { Variable, exec } from "astal";
 import Apps from "gi://AstalApps"
+import AstalWp from "gi://AstalWp"
 
 import { ToggleLatte, ToggleFrappe, ToggleMocha } from "../style"
 
 export default function ControlPanel() {
+  const speaker = AstalWp.get_default()!.defaultSpeaker
+  const volume = Variable(speaker.get_volume())
+
+  speaker.connect("notify::volume", () => {
+    volume.set(speaker.get_volume())
+  })
+
   return (
     <window 
       name="ControlPanel" 
@@ -50,6 +58,7 @@ export default function ControlPanel() {
             <label label={"󰤄"} />
           </button>
         </box>
+
         <box spacing={5}>
           <button
             cssClasses={["button"]}
@@ -78,6 +87,13 @@ export default function ControlPanel() {
             <label label={""} />
           </button>
         </box>
+
+        <slider min={0} max={1} step={0.1}
+          value={volume()}
+          onValueChanged={self => {
+            speaker.set_volume(self.value)
+          }}/>
+        <slider />
       </box>
     </window>
   )
