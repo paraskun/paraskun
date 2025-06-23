@@ -8,10 +8,10 @@ import { ToggleLatte, ToggleFrappe, ToggleMocha } from "../style"
 export default function ControlPanel() {
   const speaker = AstalWp.get_default()!.defaultSpeaker
   const volume = Variable(speaker.get_volume())
+  const brightness = Variable(0).watch("brightnessctl get", (out, prv) => parseInt(out))
 
-  speaker.connect("notify::volume", () => {
-    volume.set(speaker.get_volume())
-  })
+  speaker.connect("notify::volume", () => {volume.set(speaker.get_volume())})
+  brightness.subscribe(value => {exec("brightnessctl set " + value)})
 
   return (
     <window 
@@ -35,8 +35,7 @@ export default function ControlPanel() {
             cssClasses={["button"]}
             onClicked={() => {
               exec("systemctl poweroff")
-            }}
-          >
+            }}>
             <label label={""} />
           </button>
 
@@ -44,8 +43,7 @@ export default function ControlPanel() {
             cssClasses={["button"]}
             onClicked={() => {
               exec("reboot")
-            }}
-          >
+            }}>
             <label label={""} />
           </button>
 
@@ -53,8 +51,7 @@ export default function ControlPanel() {
             cssClasses={["button"]}
             onClicked={() => {
               exec("systemctl suspend")
-            }}
-          >
+            }}>
             <label label={"󰤄"} />
           </button>
         </box>
@@ -64,8 +61,7 @@ export default function ControlPanel() {
             cssClasses={["button"]}
             onClicked={() => {
               ToggleLatte()
-            }}
-          >
+            }}>
             <label label={"󰖨"} />
           </button>
 
@@ -73,8 +69,7 @@ export default function ControlPanel() {
             cssClasses={["button"]}
             onClicked={() => {
               ToggleFrappe()
-            }}
-          >
+            }}>
             <label label={""} />
           </button>
 
@@ -82,18 +77,27 @@ export default function ControlPanel() {
             cssClasses={["button"]}
             onClicked={() => {
               ToggleMocha()
-            }}
-          >
+            }}>
             <label label={""} />
           </button>
         </box>
 
-        <slider min={0} max={1} step={0.1}
-          value={volume()}
-          onValueChanged={self => {
-            speaker.set_volume(self.value)
-          }}/>
-        <slider />
+        <box spacing={5} hexpand={true} cssClasses={["slider"]}>
+          <label label={""} />
+          <slider min={0} max={1} step={0.1} hexpand={true}
+            value={volume()}
+            onValueChanged={self => {
+              speaker.set_volume(self.value)
+            }}/>
+        </box>
+        <box spacing={5} hexpand={true} cssClasses={["slider"]}>
+          <label label={"󰃟"} valign={Gtk.Align.Center} />
+          <slider min={0} max={255} step={1} hexpand={true}
+            value={brightness()}
+            onValueChanged={self => {
+              brightness.set(self.value)
+            }}/>
+        </box>
       </box>
     </window>
   )

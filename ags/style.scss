@@ -33,3 +33,24 @@ window {
     transform: translateX(-1px) translateY(-1px);
   }
 }
+
+.slider {
+  font-size: 14pt;
+  margin: 10px 0 0 0;
+
+  scale {
+    padding: 0 10px 0 10px;
+
+    highlight {
+      background-color: $overlay0;
+    }
+
+    trough {
+      background-color: $surface0;
+    }
+
+    slider {
+      background-color: $text;
+    }
+  }
+}
