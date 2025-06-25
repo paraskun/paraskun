@@ -8,9 +8,9 @@ import WirePlumber from "gi://AstalWp"
 function Launcher() {
   return (
     <button
-      cssClasses={["launcher"]}
+      cssClasses={["button"]}
       onClicked={() => {
-        App.toggle_window("Menu")
+        App.toggle_window("Launcher")
       }}
     >
       <label label={"󰀻"} />
@@ -57,59 +57,26 @@ function Workspaces() {
 }
 
 function Time() {
-  const time = Variable("").poll(1000, ["date", "+%H:%M"])
+  const time = Variable("").poll(60000, ["date", "+%H:%M"])
 
-  return (
-    <label label={time()}/>
-  )
+  return (<label label={time()}/>)
 }
 
-function Theme() {
-  return (
-    <box 
-      cssClasses={["workspaces"]}
-      spacing={4}
-    >
-      <button 
-        cssClasses={["workspace", "circular"]}
-        valign={Gtk.Align.CENTER}
-        halign={Gtk.Align.CENTER}
-        onClicked={() => { ToggleMocha() }}
-      />
-      <button 
-        cssClasses={["workspace", "circular"]}
-        valign={Gtk.Align.CENTER}
-        halign={Gtk.Align.CENTER}
-        onClicked={() => { ToggleFrappe() }}
-      />
-      <button 
-        cssClasses={["workspace", "circular"]}
-        valign={Gtk.Align.CENTER}
-        halign={Gtk.Align.CENTER}
-        onClicked={() => { ToggleLatte() }}
-      />
-    </box>
-  )
+function Date() {
+  const date = Variable("").poll(60000, ["date", "+%a, %b %d"])
+
+  return (<label label={date()}/>)
 }
 
-function Suspend() {
+function ControlPanel() {
   return (
     <button
-      cssClasses={["power"]}
-      onClicked={() => { exec("systemctl suspend") }}
+      cssClasses={["button"]}
+      onClicked={() => {
+        App.toggle_window("ControlPanel")
+      }}
     >
-      <label label={"󰤄"}/>
-    </button>
-  )
-}
-
-function Power() {
-  return (
-    <button
-      cssClasses={["power"]}
-      onClicked={() => { exec("poweroff") }}
-    >
-      <label label={"⏻"}/>
+      <label label={""} />
     </button>
   )
 }
@@ -135,11 +102,9 @@ function Center() {
 function End() {
   return (
     <box halign={Gtk.Align.END}>
-      <Theme />
+      <Date />
       <Gtk.Separator cssClasses={["sep"]}/>
-      <Suspend />
-      <Gtk.Separator cssClasses={["sep"]}/>
-      <Power />
+      <ControlPanel />
     </box>
   )
 }

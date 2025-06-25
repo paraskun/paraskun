@@ -1,5 +1,7 @@
-@use "style/widget/Menu.scss";
+@use "style/widget/Launcher.scss";
+@use "style/widget/ControlPanel.scss";
 @use "style/widget/Bar.scss";
+
 @import "style/theme.scss";
 
 * {
@@ -11,10 +13,6 @@ window {
   background-color: transparent;
 }
 
-button {
-  background-color: transparent;
-}
-
 .box {
   margin: 6px;
 
@@ -23,7 +21,36 @@ button {
   background-color: $surface0;
 }
 
-.secondary {
-  font-weight: 400;
+.button {
+  box-shadow: none;
+  border-radius: 3px;
+  padding: 3px 10px;
+  font-size: 14pt;
+  transition: 0.25s;
+
+  &:hover {
+    box-shadow: 0 0 0 0px $border, 2px 2px 0 0 $border;
+    transform: translateX(-1px) translateY(-1px);
+  }
 }
 
+.slider {
+  font-size: 14pt;
+  margin: 10px 0 0 0;
+
+  scale {
+    padding: 0 10px 0 10px;
+
+    highlight {
+      background-color: $overlay0;
+    }
+
+    trough {
+      background-color: $surface0;
+    }
+
+    slider {
+      background-color: $text;
+    }
+  }
+}

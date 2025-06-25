@@ -1,6 +1,5 @@
 import { App, Astal, Gtk, Gdk, hook } from "astal/gtk4"
 import { Variable, exec } from "astal";
-
 import Apps from "gi://AstalApps"
 
 const apps = new Apps.Apps()
@@ -11,7 +10,7 @@ function AppButton({ app }) {
     <button 
       cssClasses={["btn"]}
       onClicked={() => {
-        App.toggle_window("Menu")
+        App.toggle_window("Launcher")
         app.launch()
       }}
     >
@@ -69,16 +68,16 @@ function SearchEntry() {
   )
 }
 
-export default function Menu() {
+export default function Launcher() {
   return (
     <window 
-      name="Menu" 
+      name="Launcher" 
       layer={Astal.Layer.OVERLAY}
       keymode={Astal.Keymode.EXCLUSIVE}
       application={App}
-      cssClasses={["menu"]}
+      cssClasses={["launcher"]}
       onKeyPressed={(_, key) => { 
-        if (key == Gdk.KEY_Escape) { App.toggle_window("Menu") } 
+        if (key == Gdk.KEY_Escape) { App.toggle_window("Launcher") } 
       }}
     >
       <box 
