@@ -21,6 +21,6 @@ map ctrl+j close_tab
 
 
 # BEGIN_KITTY_THEME
-# frappe
+# latte
 include current-theme.conf
 # END_KITTY_THEME
