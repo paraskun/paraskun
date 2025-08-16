@@ -12,6 +12,10 @@ return {
       capabilities = caps
     })
 
+    require("lspconfig").rust_analyzer.setup({
+      capabilities = caps
+    })
+
     require("lspconfig").gopls.setup({
       capabilities = caps
     })
@@ -20,11 +24,12 @@ return {
       capabilities = caps
     })
 
-    require("lspconfig").buf_ls.setup({
+    require("lspconfig").ts_ls.setup({
       capabilities = caps
     })
 
     vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format)
+    vim.keymap.set("n", "<leader>n", vim.diagnostic.goto_next, {})
     vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
   end
 }
