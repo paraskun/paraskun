@@ -12,19 +12,11 @@ return {
       capabilities = caps
     })
 
-    require("lspconfig").rust_analyzer.setup({
-      capabilities = caps
-    })
-
     require("lspconfig").gopls.setup({
       capabilities = caps
     })
 
     require("lspconfig").lua_ls.setup({
-      capabilities = caps
-    })
-
-    require("lspconfig").ts_ls.setup({
       capabilities = caps
     })
 
