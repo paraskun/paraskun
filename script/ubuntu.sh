@@ -16,6 +16,7 @@ if [[ ! -f "/usr/local/bin/tree-sitter" ]]; then
   wget https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.6/tree-sitter-linux-x64.gz
   sudo mkdir -p /opt/tree-sitter-linux-x64/bin
   gunzip tree-sitter-linux-x64.gz
+  chmod +x tree-sitter-linux-x64
   sudo mv tree-sitter-linux-x64 /usr/local/bin/tree-sitter
 fi
 
