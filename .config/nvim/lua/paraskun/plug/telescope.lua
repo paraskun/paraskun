@@ -20,5 +20,10 @@ return {
 
     vim.keymap.set("n", "<leader>pf", telescope.find_files, {})
     vim.keymap.set("n", "<leader>pg", telescope.live_grep, {})
+    vim.keymap.set("n", "<leader>fg", function ()
+      telescope.live_grep({
+        search_dirs = { vim.fn.expand("%:p") }
+      })
+    end, {})
   end
 }

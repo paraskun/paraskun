@@ -10,7 +10,8 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "clangd",
-        "gopls"
+        "gopls",
+        "lua_ls",
       }
     })
   end
