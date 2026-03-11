@@ -17,12 +17,10 @@ if [[ ! -d "/opt/tree-sitter-linux-x64" ]]; then
   sudo mkdir -p /opt/tree-sitter-linux-x64/bin
   gunzip tree-sitter-linux-x64.gz
   sudo mv tree-sitter-linux-x64 /opt/tree-sitter-linux-x64/bin/tree-sitter
-  rm tree-sitter-linux-x64.gz
   echo "export PATH=/opt/tree-sitter-linux-x64/bin:$PATH" >> $HOME/.bashrc
 fi
 
 cd $HOME/paraskun && stow . && cd
-source $HOME/.bashrc
  
-nvim --headless "+Lazy! install" +qa
+/opt/tree-sitter-linux-x64/bin/nvim --headless "+Lazy! install" +qa
 
