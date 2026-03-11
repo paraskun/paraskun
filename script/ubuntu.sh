@@ -12,7 +12,7 @@ if [[ ! -d "/opt/nvim-linux-x86_64" ]]; then
   echo "export PATH=/opt/nvim-linux-x86_64/bin:$PATH" >> $HOME/.bashrc
 fi
 
-if [[ ! -d "/opt/tree-sitter-linux-x64" ]]; then
+if [[ ! -f "/usr/local/bin/tree-sitter" ]]; then
   wget https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.6/tree-sitter-linux-x64.gz
   sudo mkdir -p /opt/tree-sitter-linux-x64/bin
   gunzip tree-sitter-linux-x64.gz
