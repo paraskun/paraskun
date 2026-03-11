@@ -16,11 +16,10 @@ if [[ ! -d "/opt/tree-sitter-linux-x64" ]]; then
   wget https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.6/tree-sitter-linux-x64.gz
   sudo mkdir -p /opt/tree-sitter-linux-x64/bin
   gunzip tree-sitter-linux-x64.gz
-  sudo mv tree-sitter-linux-x64 /opt/tree-sitter-linux-x64/bin/tree-sitter
-  echo "export PATH=/opt/tree-sitter-linux-x64/bin:$PATH" >> $HOME/.bashrc
+  sudo mv tree-sitter-linux-x64 /usr/local/bin/tree-sitter
 fi
 
 cd $HOME/paraskun && stow . && cd
  
-/opt/tree-sitter-linux-x64/bin/nvim --headless "+Lazy! install" +qa
+/opt/nvim-linux-x86_64/bin/nvim --headless "+Lazy! install" +qa
 
