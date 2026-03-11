@@ -10,7 +10,6 @@ if [[ ! -d "/opt/nvim-linux-x86_64" ]]; then
   sudo tar -xzf nvim-linux-x86_64.tar.gz -C /opt
   rm nvim-linux-x86_64.tar.gz
   echo "export PATH=/opt/nvim-linux-x86_64/bin:$PATH" >> $HOME/.bashrc
-  export PATH=/opt/nvim-linux-x86_64/bin:$PATH
 fi
 
 if [[ ! -d "/opt/tree-sitter-linux-x64" ]]; then
@@ -19,10 +18,9 @@ if [[ ! -d "/opt/tree-sitter-linux-x64" ]]; then
   gunzip tree-sitter-linux-x64.gz
   sudo mv tree-sitter-linux-x64 /opt/tree-sitter-linux-x64/bin/tree-sitter
   echo "export PATH=/opt/tree-sitter-linux-x64/bin:$PATH" >> $HOME/.bashrc
-  export PATH=/opt/tree-sitter-linux-x64/bin:$PATH
 fi
 
-cd $HOME/paraskun && stow -R . && cd
+cd $HOME/paraskun && stow . && cd
  
-/opt/nvim-linux-x86_64/bin/nvim --headless "+Lazy! install" +qa
+/opt/tree-sitter-linux-x64/bin/nvim --headless "+Lazy! install" +qa
 
