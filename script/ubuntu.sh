@@ -3,7 +3,9 @@
 sudo apt update && sudo apt install -y  \
   stow                                  \
   wget                                  \
-  tar
+  tar                                   \
+  nodejs                                \
+  npm
 
 if [[ ! -d "/opt/nvim-linux-x86_64" ]]; then
   wget https://github.com/neovim/neovim/releases/download/v0.11.6/nvim-linux-x86_64.tar.gz
@@ -12,15 +14,10 @@ if [[ ! -d "/opt/nvim-linux-x86_64" ]]; then
   echo "export PATH=/opt/nvim-linux-x86_64/bin:$PATH" >> $HOME/.bashrc
 fi
 
-if [[ ! -f "/usr/local/bin/tree-sitter" ]]; then
-  wget https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.6/tree-sitter-linux-x64.gz
-  sudo mkdir -p /opt/tree-sitter-linux-x64/bin
-  gunzip tree-sitter-linux-x64.gz
-  chmod +x tree-sitter-linux-x64
-  sudo mv tree-sitter-linux-x64 /usr/local/bin/tree-sitter
-fi
+sudo npm install -g tree-sitter-cli
 
 cd $HOME/paraskun && stow . && cd
  
 /opt/nvim-linux-x86_64/bin/nvim --headless "+Lazy! install" +qa
+/opt/nvim-linux-x86_64/bin/nvim --headless "+TSUpdate" +qa
 
