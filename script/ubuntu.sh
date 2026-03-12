@@ -4,6 +4,7 @@ sudo apt update && sudo apt install -y  \
   stow                                  \
   wget                                  \
   tar                                   \
+  ripgrep                               \
   nodejs                                \
   npm
 
