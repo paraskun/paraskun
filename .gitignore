@@ -1,0 +1,6 @@
+.devcontainer
+.clangd
+build
+
+!test/.devcontainer
+
