@@ -18,7 +18,12 @@ return {
       },
     }
 
-    vim.keymap.set("n", "<leader>pf", telescope.find_files, {})
+    vim.keymap.set("n", "<leader>pf", function ()
+      telescope.find_files({
+        hidden = true
+      })
+    end, {})
+
     vim.keymap.set("n", "<leader>pg", telescope.live_grep, {})
     vim.keymap.set("n", "<leader>fg", function ()
       telescope.live_grep({

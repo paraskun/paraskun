@@ -26,6 +26,8 @@
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
 
+theme = catppuccin-mocha.conf
+
 font-family = Iosevka Medium
 font-family-bold = Iosevka Semibold
 

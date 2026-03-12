@@ -6,8 +6,8 @@ return {
     name = "catppuccin",
     config = function()
       require("catppuccin").setup({
-        flavour = os.getenv("FLAVOUR"),
-        transparent_background = true,
+        flavour = "mocha",
+        transparent_background = false,
         no_italic = true,
 
         integrations = {
