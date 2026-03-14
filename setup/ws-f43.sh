@@ -3,12 +3,15 @@
 touch $HOME/.bash_profile
 
 sudo dnf install -y \
+  hyprland          \
   stow              \
   wget              \
   tar               \
   ripgrep           \
   swww              \
-  npm
+  npm               \
+  waybar
+
 
 if [[ ! -d "/opt/nvim-linux-x86_64" ]]; then
   wget https://github.com/neovim/neovim/releases/download/v0.11.6/nvim-linux-x86_64.tar.gz

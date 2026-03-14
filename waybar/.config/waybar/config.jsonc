@@ -1,0 +1,34 @@
+{
+  "height": 30,
+  "spacing": 4,
+
+  "modules-left": [
+    "hyprland/workspaces",
+  ],
+
+  "modules-center": [
+    "clock",
+  ],
+
+  "modules-right": [
+    "memory",
+    "cpu",
+    "network",
+    "hyprland/language",
+  ],
+
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "HDMI-A-1": [1, 2],
+      "DP-1": [3, 4],
+    },
+
+    "format": "{icon} {name}",
+
+    "format-icons": {
+      "active": "",
+      "default": "",
+    },
+  },
+}
+
