@@ -10,7 +10,9 @@ sudo dnf install -y \
   ripgrep           \
   swww              \
   npm               \
-  waybar
+  waybar            \
+  slurp             \
+  grim
 
 
 if [[ ! -d "/opt/nvim-linux-x86_64" ]]; then
@@ -25,4 +27,6 @@ stow tmux nvim hypr ghostty walls
  
 /opt/nvim-linux-x86_64/bin/nvim --headless "+Lazy! install" +qa
 /opt/nvim-linux-x86_64/bin/nvim --headless "+TSUpdate" +qa
+
+echo "export DC_DOTFILES_FLAGS='--dotfiles-repository https://github.com/paraskun/paraskun.git --dotfiles-install-command setup/dc-u24.04'" >> $HOME/.bash_profile
 

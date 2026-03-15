@@ -8,19 +8,18 @@ return {
   config = function()
     local caps = require("cmp_nvim_lsp").default_capabilities()
 
-    require("lspconfig").clangd.setup({
+    vim.lsp.config("clangd", {
       capabilities = caps,
     })
 
-    require("lspconfig").gopls.setup({
+    vim.lsp.config("gopls", {
       capabilities = caps,
     })
 
-    require("lspconfig").lua_ls.setup({
+    vim.lsp.config("lua_ls", {
       capabilities = caps,
     })
 
-    vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format)
     vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {
       noremap = true,
       silent = true,
