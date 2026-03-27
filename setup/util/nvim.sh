@@ -14,7 +14,7 @@ fi
 
 ### node packages
 
-sudo npm install -g tree-sitter-cli
+sudo npm install -g tree-sitter-cli prettier
 
 if [[ ! -d "$HOME/.deno/bin" ]]; then
   curl -fsSL https://deno.land/install.sh | sh
