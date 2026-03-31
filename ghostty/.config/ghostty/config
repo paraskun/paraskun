@@ -26,7 +26,7 @@
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
 
-theme = catppuccin-mocha.conf
+theme = TokyoNight Moon
 
 font-size = 13.5
 font-family = Iosevka

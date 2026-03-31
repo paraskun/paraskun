@@ -4,6 +4,7 @@ return {
 
     lazy = false,
     name = "catppuccin",
+
     config = function()
       require("catppuccin").setup({
         flavour = "mocha",
@@ -16,7 +17,17 @@ return {
         },
       })
 
-      vim.cmd.colorscheme("catppuccin")
+      -- vim.cmd.colorscheme("catppuccin")
+    end
+  },
+  {
+    "folke/tokyonight.nvim",
+
+    lazy = false,
+    priority = 1000,
+
+    config = function()
+      vim.cmd.colorscheme("tokyonight")
     end
   },
   {
