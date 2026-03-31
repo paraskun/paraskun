@@ -28,9 +28,12 @@
 
 theme = catppuccin-mocha.conf
 
-font-size = 16
-font-family = Iosevka Medium
-font-family-bold = Iosevka Semibold
+font-size = 13.5
+font-family = Iosevka
+font-style = SemiBold
+font-style-italic = SemiBold Italic
+font-style-bold = Bold
+freetype-load-flags = no-hinting
 
 window-padding-x = 10
 window-padding-y = 10
