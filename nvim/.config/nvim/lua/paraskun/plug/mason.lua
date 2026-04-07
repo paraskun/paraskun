@@ -12,6 +12,7 @@ return {
         "clangd",
         "gopls",
         "lua_ls",
+        "pylsp",
       }
     })
   end

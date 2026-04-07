@@ -48,4 +48,40 @@ return {
       end, {})
     end
   },
+  {
+    "ThePrimeagen/harpoon",
+
+    dependecies = {
+      "nvim-lua/plenary.nvim",
+    },
+
+    config = function()
+      require("harpoon").setup({
+        mark_branch = true,
+        tabline = false,
+      })
+
+      local mark = require("harpoon.mark")
+      local ui = require("harpoon.ui")
+
+      vim.keymap.set("n", "<leader>a", mark.add_file, {})
+      vim.keymap.set("n", "<leader>q", ui.toggle_quick_menu, {})
+      vim.keymap.set("n", "<leader>j", ui.nav_prev, {})
+      vim.keymap.set("n", "<leader>k", ui.nav_next, {})
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "harpoon",
+        group = vim.api.nvim_create_augroup("Harpoon", { clear = true }),
+        callback = function()
+          vim.keymap.set("n", "s", function()
+            local cur = vim.api.nvim_get_current_line()
+            local cwd = vim.fn.getcwd() .. "/"
+
+            vim.cmd("vs")
+            vim.cmd("e " .. cwd .. cur)
+          end, { buffer = true, noremap = true, silent = true })
+        end
+      })
+    end
+  },
 }
