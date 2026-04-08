@@ -5,6 +5,7 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set({"n", "v"}, "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR><C-w>w")
 vim.keymap.set("n", "<leader>sh", ":split<CR><C-w>w")
+vim.keymap.set("n", "r", "<C-r>")
 
 vim.opt.number = true
 vim.opt.relativenumber = true
