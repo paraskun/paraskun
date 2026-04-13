@@ -27,7 +27,9 @@ return {
     priority = 1000,
 
     config = function()
-      vim.cmd.colorscheme("tokyonight")
+      require("tokyonight").setup({})
+
+      -- vim.cmd.colorscheme("tokyonight-night")
     end
   },
   {
@@ -36,7 +38,7 @@ return {
     config = function()
       require("github-theme").setup({})
 
-      -- vim.cmd.colorscheme("github_dark_default")
+      vim.cmd.colorscheme("github_dark_default")
     end
   },
 }

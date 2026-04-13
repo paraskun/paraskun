@@ -1,0 +1,16 @@
+set mbox_type     = Maildir
+set folder        = ~/.mail/ya/
+set spoolfile     = +Inbox
+set trash         = +Trash
+set header_cache  = ~/.cache/mutt/ya
+
+unset record
+
+set from = ig.paraskun@yandex.ru
+set smtp_url = smtps://$from@smtp.gmail.com
+set smtp_pass = `pass yandex.ru/mail/pass`
+
+mailboxes \
+  +Inbox  \
+  +Sent   \
+  +Trash

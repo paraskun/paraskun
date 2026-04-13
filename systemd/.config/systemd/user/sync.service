@@ -1,0 +1,10 @@
+[Unit]
+Description=Synchronize settings
+Before=systemd-suspend.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/paraskun/.scripts/sync.sh
+
+[Install]
+WantedBy=default.target

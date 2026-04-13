@@ -1,0 +1,16 @@
+set mbox_type     = Maildir
+set folder        = ~/.mail/gmail/
+set spoolfile     = +Inbox
+set trash         = +Trash
+set header_cache  = ~/.cache/mutt/gmail
+
+unset record
+
+set from = ig.paraskun@gmail.com
+set smtp_url = smtps://$from@smtp.gmail.com
+set smtp_pass = `pass google.com/mail/pass`
+
+mailboxes \
+  +Inbox  \
+  +Sent   \
+  +Trash
