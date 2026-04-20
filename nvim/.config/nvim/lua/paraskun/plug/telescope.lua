@@ -66,8 +66,8 @@ return {
 
       vim.keymap.set("n", "<leader>a", mark.add_file, {})
       vim.keymap.set("n", "<leader>q", ui.toggle_quick_menu, {})
-      vim.keymap.set("n", "<leader>j", ui.nav_prev, {})
-      vim.keymap.set("n", "<leader>k", ui.nav_next, {})
+      -- vim.keymap.set("n", "<leader>j", ui.nav_prev, {})
+      -- vim.keymap.set("n", "<leader>k", ui.nav_next, {})
 
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "harpoon",
