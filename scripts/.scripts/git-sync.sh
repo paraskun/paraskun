@@ -1,10 +1,9 @@
 #!/bin/bash
 
-export HOME=/home/paraskun
+# Notes
 
-echo "Syncing notes..."
-cd /home/paraskun/notes
-/usr/bin/git add .
-/usr/bin/git commit -m "$(/usr/bin/curl -s https://whatthecommit.com/index.txt)"
-/usr/bin/git push origin trunk
+cd $HOME/notes
+git add .
+git commit -m "$(date +%D): sync"
+git push origin trunk
 
