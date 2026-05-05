@@ -3,7 +3,15 @@ return {
 
   config = function()
     require("nvim-treesitter.config").setup {
-      ensure_installed = { "c", "cpp", "go", "lua", "markdown", "markdown_inline" },
+      ensure_installed = {
+        "c",
+        "cpp",
+        "go",
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "latex"
+      },
       auto_install = true,
 
       highlight = {

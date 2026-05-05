@@ -1,0 +1,10 @@
+[terminal]
+vt = 1
+
+[default_session]
+user = "paraskun"
+command = "uwsm start hyprland.desktop"
+
+[initial_session]
+user = "paraskun"
+command = "uwsm start hyprland.desktop"

@@ -7,3 +7,6 @@ git add .
 git commit -m "$(date +%D): sync"
 git push origin trunk
 
+# Passwords
+
+pass git push

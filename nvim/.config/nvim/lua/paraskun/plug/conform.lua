@@ -7,6 +7,7 @@ return {
         markdown = { "prettier" },
         json = { "prettier" },
         yaml = { "prettier" },
+        tex = { "prettier" },
       },
 
       default_format_opts = {
