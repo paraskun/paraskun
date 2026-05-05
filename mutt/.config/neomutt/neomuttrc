@@ -1,0 +1,34 @@
+set real_name  = "Ivan Paraskun"
+set spool_file = ~/.mail/inbox
+
+set folder    = ~/.mail
+set record    = +Sent
+set postponed = +Drafts
+set trash     = +Trash
+
+unmailboxes *
+
+# GMail
+
+mailboxes                                                   \
+  -label G:Inbox -notify -poll imaps://imap.gmail.com/INBOX \
+  -label G:Sent -nonotify -poll imaps://imap.gmail.com/Sent
+
+folder-hook imaps://imap.gmail.com/ "source $XDG_CONFIG_HOME/neomutt/acc/gmailrc"
+
+set editor = "nvim"
+
+color status white color237
+color status green color237 '(NEW):[0-9]+'
+color status red color237 '(DEL):[0-9]+'
+color status yellow color237 '(FLAG):[0-9]+'
+color status yellow color237 '(TAG):[0-9]+'
+color status color0 brightblack '(.*)▓▒░' 1
+color status color8 color0 '.*(▓▒░)' 1
+color status black color8 '\s*([0-9]+%|all|end)\s*'
+color status color8 color0 '(░▒▓).*$' 1
+color status yellow color237 '\s*\s*[0-9]+\s*'
+color status black color8 ' ([0-9]+%|all|end) \s*'
+color status default color237 '░'
+
+source $XDG_CONFIG_HOME/neomutt/colors/tokyo-night.colors
