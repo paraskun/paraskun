@@ -1,22 +1,11 @@
-set real_name  = "Ivan Paraskun"
-set spool_file = ~/.mail/inbox
-
-set folder    = ~/.mail
-set record    = +Sent
-set postponed = +Drafts
-set trash     = +Trash
-
-unmailboxes *
-
-# GMail
-
-mailboxes                                                   \
-  -label G:Inbox -notify -poll imaps://imap.gmail.com/INBOX \
-  -label G:Sent -nonotify -poll imaps://imap.gmail.com/Sent
-
-folder-hook imaps://imap.gmail.com/ "source $XDG_CONFIG_HOME/neomutt/acc/gmailrc"
-
+set realname = "Ivan Paraskun"
 set editor = "nvim"
+
+source $XDG_CONFIG_HOME/neomutt/login/gmailrc
+folder-hook $folder "source $XDG_CONFIG_HOME/neomutt/login/gmailrc"
+
+source $XDG_CONFIG_HOME/neomutt/login/nsturc
+folder-hook $folder "source $XDG_CONFIG_HOME/neomutt/login/nsturc"
 
 color status white color237
 color status green color237 '(NEW):[0-9]+'

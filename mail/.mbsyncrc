@@ -1,0 +1,80 @@
+# GMAIL
+
+IMAPAccount gmail
+Host imap.gmail.com
+User ig.paraskun@gmail.com
+PassCmd "pass google/paraskun/mutt/pass"
+TLSType IMAPS
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+SubFolders Verbatim
+Path ~/.mail/gmail/
+Inbox ~/.mail/gmail/Inbox
+
+Channel gmail-general
+Far :gmail-remote:
+Near :gmail-local:
+Patterns "INBOX"
+Create Both
+Expunge Both
+
+Channel gmail-sent
+Far :gmail-remote:"[Gmail]/Sent Mail"
+Near :gmail-local:Sent
+Create Near
+Expunge Both
+
+Channel gmail-trash
+Far :gmail-remote:"[Gmail]/Trash"
+Near :gmail-local:Trash
+Create Near
+Expunge Both
+
+Group gmail
+Channel gmail-general
+Channel gmail-sent
+Channel gmail-trash
+
+# NSTU
+
+IMAPAccount nstu
+Host mail2.nstu.ru
+User "paraskun.2022@stud.nstu.ru"
+PassCmd "pass nstu/pass"
+TLSType IMAPS
+AuthMechs LOGIN
+
+IMAPStore nstu-remote
+Account nstu
+
+MaildirStore nstu-local
+SubFolders Verbatim
+Path ~/.mail/nstu/
+Inbox ~/.mail/nstu/Inbox
+
+Channel nstu-general
+Far :nstu-remote:
+Near :nstu-local:
+Patterns "INBOX"
+Create Both
+Expunge Both
+
+Channel nstu-sent
+Far :nstu-remote:"Sent"
+Near :nstu-local:Sent
+Create Near
+Expunge Both
+
+Channel nstu-trash
+Far :nstu-remote:"Trash"
+Near :nstu-local:Trash
+Create Near
+Expunge Both
+
+Group nstu
+Channel nstu-general
+Channel nstu-sent
+Channel nstu-trash

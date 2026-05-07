@@ -1,0 +1,16 @@
+set mbox_type     = Maildir
+set folder        = ~/.mail/nstu/
+set spoolfile     = +Inbox
+set record        = +Sent
+set trash         = +Trash
+set header_cache  = ~/.cache/mutt/nstu
+
+set from = paraskun.2022@stud.nstu.ru
+set smtp_url = smtps://$from@mail2.nstu.ru:587
+set smtp_pass = `pass nstu/pass`
+set smtp_authenticators = "login"
+
+mailboxes \
+  +Inbox  \
+  +Sent   \
+  +Trash
