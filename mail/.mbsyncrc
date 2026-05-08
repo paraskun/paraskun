@@ -78,3 +78,37 @@ Group nstu
 Channel nstu-general
 Channel nstu-sent
 Channel nstu-trash
+
+# LTX
+
+IMAPAccount ltx
+Host mail.eltex.loc
+User "ivan.paraskun@eltex.loc"
+PassCmd "pass ltx/pass"
+TLSType IMAPS
+AuthMechs LOGIN
+
+IMAPStore ltx-remote
+Account ltx
+
+MaildirStore ltx-local
+SubFolders Verbatim
+Path ~/.mail/ltx/
+Inbox ~/.mail/ltx/Inbox
+
+Channel ltx-general
+Far :ltx-remote:
+Near :ltx-local:
+Patterns "INBOX"
+Create Both
+Expunge Both
+
+Channel ltx-trash
+Far :ltx-remote:"Trash"
+Near :ltx-local:Trash
+Create Near
+Expunge Both
+
+Group ltx
+Channel ltx-general
+Channel ltx-trash

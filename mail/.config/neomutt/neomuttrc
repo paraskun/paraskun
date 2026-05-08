@@ -7,6 +7,9 @@ folder-hook $folder "source $XDG_CONFIG_HOME/neomutt/login/gmailrc"
 source $XDG_CONFIG_HOME/neomutt/login/nsturc
 folder-hook $folder "source $XDG_CONFIG_HOME/neomutt/login/nsturc"
 
+source $XDG_CONFIG_HOME/neomutt/login/ltxrc
+folder-hook $folder "source $XDG_CONFIG_HOME/neomutt/login/ltxrc"
+
 color status white color237
 color status green color237 '(NEW):[0-9]+'
 color status red color237 '(DEL):[0-9]+'
