@@ -10,7 +10,8 @@ return {
         "lua",
         "markdown",
         "markdown_inline",
-        "latex"
+        "latex",
+        "cue",
       },
       auto_install = true,
 

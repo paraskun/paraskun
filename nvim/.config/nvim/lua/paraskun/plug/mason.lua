@@ -13,6 +13,7 @@ return {
         "gopls",
         "lua_ls",
         "pylsp",
+        "cuelsp",
       }
     })
   end

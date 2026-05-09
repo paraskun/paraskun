@@ -24,6 +24,10 @@ return {
       capabilities = caps,
     })
 
+    vim.lsp.config("cuelsp", {
+      capabilities = caps,
+    })
+
     vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
     vim.keymap.set("n", "<leader>gs", vim.lsp.buf.declaration, {})
     vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
