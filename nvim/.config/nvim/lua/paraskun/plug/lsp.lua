@@ -24,7 +24,7 @@ return {
       capabilities = caps,
     })
 
-    vim.lsp.config("cuelsp", {
+    vim.lsp.config("cue", {
       capabilities = caps,
     })
 
