@@ -1,5 +1,6 @@
 set realname = "Ivan Paraskun"
 set editor = "nvim"
+set pager_stop = true
 
 source $XDG_CONFIG_HOME/neomutt/login/gmailrc
 folder-hook $folder "source $XDG_CONFIG_HOME/neomutt/login/gmailrc"
@@ -9,6 +10,9 @@ folder-hook $folder "source $XDG_CONFIG_HOME/neomutt/login/nsturc"
 
 source $XDG_CONFIG_HOME/neomutt/login/ltxrc
 folder-hook $folder "source $XDG_CONFIG_HOME/neomutt/login/ltxrc"
+
+source $XDG_CONFIG_HOME/neomutt/login/yarc
+folder-hook $folder "source $XDG_CONFIG_HOME/neomutt/login/yarc"
 
 color status white color237
 color status green color237 '(NEW):[0-9]+'

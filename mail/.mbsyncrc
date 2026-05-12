@@ -3,7 +3,7 @@
 IMAPAccount gmail
 Host imap.gmail.com
 User ig.paraskun@gmail.com
-PassCmd "pass google/paraskun/mutt/pass"
+PassCmd "pass google.com/mail/pass"
 TLSType IMAPS
 
 IMAPStore gmail-remote
@@ -43,7 +43,7 @@ Channel gmail-trash
 IMAPAccount nstu
 Host mail2.nstu.ru
 User "paraskun.2022@stud.nstu.ru"
-PassCmd "pass nstu/pass"
+PassCmd "pass nstu.ru/pass"
 TLSType IMAPS
 AuthMechs LOGIN
 
@@ -84,7 +84,7 @@ Channel nstu-trash
 IMAPAccount ltx
 Host mail.eltex.loc
 User "ivan.paraskun@eltex.loc"
-PassCmd "pass ltx/pass"
+PassCmd "pass eltex.loc/pass"
 TLSType IMAPS
 AuthMechs LOGIN
 
@@ -112,3 +112,43 @@ Expunge Both
 Group ltx
 Channel ltx-general
 Channel ltx-trash
+
+# YA
+
+IMAPAccount ya
+Host imap.yandex.ru
+User ig.paraskun@yandex.ru
+PassCmd "pass yandex.ru/mail/pass"
+TLSType IMAPS
+
+IMAPStore ya-remote
+Account ya
+
+MaildirStore ya-local
+SubFolders Verbatim
+Path ~/.mail/ya/
+Inbox ~/.mail/ya/Inbox
+
+Channel ya-general
+Far :ya-remote:
+Near :ya-local:
+Patterns "INBOX"
+Create Both
+Expunge Both
+
+Channel ya-sent
+Far :ya-remote:"Sent"
+Near :ya-local:Sent
+Create Near
+Expunge Both
+
+Channel ya-trash
+Far :ya-remote:"Trash"
+Near :ya-local:Trash
+Create Near
+Expunge Both
+
+Group ya
+Channel ya-general
+Channel ya-sent
+Channel ya-trash
