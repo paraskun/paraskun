@@ -29,6 +29,16 @@ return {
         capabilities = caps,
       })
 
+      vim.lsp.config("texlab", {
+        capabilities = caps,
+        settings = {
+          texlab = {
+            latexFormatter = "latexindent",
+            formatterLineLength = 50,
+          }
+        }
+      })
+
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gs", vim.lsp.buf.declaration, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})

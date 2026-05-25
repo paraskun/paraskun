@@ -20,5 +20,6 @@ vim.opt.termguicolors = true
 vim.g.python_host_prog = vim.fn.expand("~/.venv/nvim/bin/python3")
 vim.g.python3_host_prog = vim.fn.expand("~/.venv/nvim/bin/python3")
 vim.env.PATH = vim.fn.expand("~/.venv/nvim/bin") .. ":" .. vim.env.PATH
+vim.env.PATH = vim.fn.expand("~/.local/share/nvim/mason/bin") .. ":" .. vim.env.PATH
 
 require("paraskun.lazy")

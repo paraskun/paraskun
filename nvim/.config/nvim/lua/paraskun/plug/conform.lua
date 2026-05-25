@@ -1,7 +1,7 @@
 return {
   "stevearc/conform.nvim",
 
-  config = function ()
+  config = function()
     require("conform").setup({
       formatters_by_ft = {
         markdown = { "prettier" },
@@ -15,7 +15,7 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>ff", function ()
+    vim.keymap.set("n", "<leader>ff", function()
       require("conform").format({ lsp_fallback = true })
     end, {})
   end
