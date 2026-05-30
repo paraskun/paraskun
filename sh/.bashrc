@@ -11,6 +11,8 @@ if ! [[ "$PATH" =~ "$HOME/go/bin:" ]]; then
 fi
 
 export PATH
+export OLLAMA_HOST="localhost"
+export OLLAMA_PORT="11434"
 
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'

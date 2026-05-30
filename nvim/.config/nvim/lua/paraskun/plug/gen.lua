@@ -8,7 +8,9 @@ return {
       model = "gemma2:2b",
       display_mode = "float",
       quit_map = "q",
-      accept_map = "<A-cr>"
+      accept_map = "<A-cr>",
+      host = vim.env.OLLAMA_HOST,
+      port = vim.env.OLLAMA_PORT,
     })
 
     gen.prompts["Fix"] = {
