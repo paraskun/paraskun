@@ -8,7 +8,7 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        theme = "tokyonight",
+        theme = "gruvbox-material",
       },
       sections = {
         lualine_c = {
