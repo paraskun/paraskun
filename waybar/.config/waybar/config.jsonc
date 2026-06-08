@@ -2,7 +2,7 @@
   "width": 30,
   "height": 100,
   "position": "left",
-  "output": ["HDMI-A-1"],
+  "output": ["DP-1"],
   "margin-left": 10,
 
   "modules-center": [
