@@ -5,7 +5,7 @@ ARCH=$(uname -m)
 
 case "${ARCH}" in
 "x86_64")
-  ARCH="amd64"
+  ARCH="x86_64"
   ;;
 "arm64" | "aarch64")
   ARCH="arm64"
