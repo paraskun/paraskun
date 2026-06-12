@@ -52,5 +52,8 @@ return {
         }
       })
     end
-  }
+  },
+  {
+    "jjo/vim-cue",
+  },
 }
