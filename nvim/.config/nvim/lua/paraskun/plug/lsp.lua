@@ -11,6 +11,14 @@ return {
 
       vim.lsp.config("*", { capabilities = caps })
 
+      vim.lsp.config("tinymist", {
+        settings = {
+          formatterMode = "typstyle",
+          formatterPrintWidth = 80,
+          formatterProseWrap = true,
+        },
+      })
+
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gs", vim.lsp.buf.declaration, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
@@ -48,12 +56,16 @@ return {
         handlers = {
           function(name)
             vim.lsp.enable(name)
-          end
+          end,
         }
       })
     end
   },
   {
     "jjo/vim-cue",
+  },
+  {
+    "terrastruct/d2-vim",
+    ft = { "d2" },
   },
 }
