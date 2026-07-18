@@ -2,6 +2,10 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+if ! [[ "$PATH" =~ "/usr/local/go/bin:" ]]; then
+    PATH="/usr/local/go/bin:$PATH"
+fi
+
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
